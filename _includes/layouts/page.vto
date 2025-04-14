@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-webtui-theme="catppuccin-mocha">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kubernetez Academy</title>
+    <style>
+      @layer base, utils, components;
+      *, *::before, *::after {
+        box-sizing: border-box
+      }
+      
+      .menu {
+        width: 30ch;
+        height: 100%;
+      }
+      .main {
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@webtui/css/dist/full.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@webtui/theme-catppuccin/dist/index.css" />
+    
+  </head>
+  <body>
+       <header>
+        <div box-="square"  style="display: flex">
+          
+          <div style="flex: 0 0 auto;">
+            <a href="/"><h1>Kubermnetez Academy</h1></a>
+            
+          </div>
+          <div style="flex: 1 1 auto;"></div>
+          <div style="flex: 0 0 auto;">
+            <a href="/about"><h1>About</h1></a>
+          </div>
+        </div>
+       </header>
+
+        <main>
+            {{ content }}
+        </main>
+        <footer box-="square">
+         © 2025 Kubernetez Academy. All Rightz Rezerved.
+        </footer>
+  </body>
+</html>
