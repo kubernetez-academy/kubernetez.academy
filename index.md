@@ -17,7 +17,9 @@ title: About
   </div>
   
   <div box-="square" class="main">
-    <h2>faszom</h2>
+    <h2>Description</h2>
+    soon ...
+    <p>
     <button box-="round">Subscribe</button>
 
     
