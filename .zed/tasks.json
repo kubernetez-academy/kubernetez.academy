@@ -1,0 +1,6 @@
+[
+  {
+    "label": "Lume: Serve",
+    "command": "deno task serve"
+  }
+]

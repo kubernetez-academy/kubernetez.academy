@@ -1,4 +1,7 @@
-.vscode/
+/.devenv/
+/.direnv/
+/.vscode/
+
 _site
 _cache
 .DS_Store
