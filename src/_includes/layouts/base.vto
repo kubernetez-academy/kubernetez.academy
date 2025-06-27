@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title || "Kubernetez Academy - Master Cloud Native Technologies" }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'k8s-blue': '#326CE5',
+                        'k8s-dark-blue': '#1E3A8A',
+                        'cncf-blue': '#4B9AFF',
+                        'cloud-gray': '#F8FAFC',
+                        'tech-purple': '#7C3AED',
+                        'devops-green': '#10B981'
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #326CE5 0%, #4B9AFF 50%, #7C3AED 100%); }
+        .tech-card { transition: all 0.3s ease; }
+        .tech-card:hover { transform: translateY(-8px); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-k8s-blue rounded-lg flex items-center justify-center">
+                        <i class="fas fa-dharmachakra text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Kubernetez Academy</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#journey" class="text-gray-600 hover:text-k8s-blue transition">Journey</a>
+                    <a href="#trainings" class="text-gray-600 hover:text-k8s-blue transition">Trainings</a>
+                    <a href="#about" class="text-gray-600 hover:text-k8s-blue transition">About</a>
+                    <button class="bg-k8s-blue text-white px-6 py-2 rounded-lg hover:bg-k8s-dark-blue transition">
+                        Start Learning
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {{ content }}
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-k8s-blue rounded-lg flex items-center justify-center">
+                            <i class="fas fa-dharmachakra text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">Kubernetez Academy</span>
+                    </div>
+                    <p class="text-gray-400">Empowering the next generation of cloud-native professionals</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Courses</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        {{ for training of (search.pages("type=training featured.enabled=true", "featured.order=asc").slice(0, 5)) }}
+                            <li><a href="{{ training.url }}" class="hover:text-white transition">{{ training.featured.title ? training.featured.title : training.title }}</a></li>
+                        {{ /for }}
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Instructors</a></li>
+                        <li><a href="mailto:info@kubernetez.academy" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Kubernetez Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95');
+            } else {
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+</body>
+</html>

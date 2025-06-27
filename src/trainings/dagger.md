@@ -8,7 +8,7 @@ badge: Advanced Level
 featured:
     enabled: true
     description: Programmable CI/CD engine that runs your pipelines in containers.
-    order: 20
+    order: 30
 color: orange-500
 price: 299
 originalPrice: 399

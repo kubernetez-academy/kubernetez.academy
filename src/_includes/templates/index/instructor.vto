@@ -1,0 +1,21 @@
+<div class="text-center">
+    <div class="relative mb-6">
+        <img src="{{ instructor.image || 'https://placehold.co/300x300/326CE5/FFFFFF?text=' + instructor.name.replace(' ', '+') }}"
+             alt="{{ instructor.name }}"
+             class="w-48 h-48 rounded-full mx-auto shadow-lg">
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ instructor.name }}</h3>
+    <p class="text-lg text-k8s-blue font-semibold mb-4">{{ instructor.title }}</p>
+    <div class="text-left space-y-3 text-gray-600">
+        {{ instructor.bio |> md }}
+    </div>
+    {{ if instructor.social }}
+        <div class="flex justify-center space-x-2 mt-4">
+            {{ for social of instructor.social }}
+                <a href="{{ social.url }}" target="_blank" class="w-10 h-10 bg-{{ social.color || 'blue-600' }} rounded-full flex items-center justify-center hover:bg-{{ social.hoverColor || 'blue-700' }} transition">
+                    <i class="{{ social.icon }} text-white"></i>
+                </a>
+            {{ /for }}
+        </div>
+    {{ /if }}
+</div>

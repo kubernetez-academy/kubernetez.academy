@@ -1,0 +1,53 @@
+instructors:
+    - name: Lajos Papp
+      title: Co-Founder & Instructor
+      color: k8s-blue
+      image: https://placehold.co/300x300/326CE5/FFFFFF?text=Lajos+Papp
+      bio: |
+          Expert cloud-native engineer with extensive experience in Kubernetes and container orchestration.
+
+          Specializes in practical, hands-on training approaches that prepare students for real-world challenges.
+
+          Passionate about sharing knowledge and helping developers master cloud-native technologies.
+      social:
+          - icon: fab fa-linkedin
+            url: https://www.linkedin.com/in/lalyos/
+            color: blue-600
+            hoverColor: blue-700
+    - name: Márk Sági-Kazár
+      title: Co-Founder & Instructor
+      color: cncf-blue
+      image: https://placehold.co/300x300/326CE5/FFFFFF?text=Mark+Sagi-Kazar
+      bio: |
+          Experienced software engineer and cloud-native specialist with deep expertise in modern development practices.
+
+          Focus on building robust, scalable systems and sharing practical knowledge through comprehensive training.
+
+          Committed to empowering developers with cutting-edge cloud-native skills and best practices.
+      social:
+          - icon: fab fa-linkedin
+            url: https://www.linkedin.com/in/sagikazarmark/
+            color: blue-600
+            hoverColor: blue-700
+
+comingSoon:
+    - title: ArgoCD
+      description: GitOps continuous delivery for Kubernetes
+      color: red-400
+      icon: fas fa-sync-alt
+    - title: FluxCD
+      description: Modern GitOps toolkit for Kubernetes
+      color: purple-400
+      icon: fas fa-stream
+    - title: Kubernetes Secrets
+      description: Advanced secrets management in Kubernetes
+      color: indigo-400
+      icon: fas fa-key
+    - title: Kubernetes Observability
+      description: Monitoring and logging for Kubernetes clusters
+      color: green-400
+      icon: fas fa-chart-bar
+    - title: OpenBao/Vault
+      description: Secrets management and security
+      color: yellow-400
+      icon: fas fa-lock
