@@ -17,10 +17,9 @@ title: About
   </div>
   
   <div box-="square" class="main">
-    <h2>Description</h2>
-    soon ...
+    <h2>Contact</h2>
     <p>
-    <button box-="round">Subscribe</button>
+    <a style="color: white" href="mailto:info@kubernetez.academy">info@kubernetez.academy</a>
 
     
   </div>
