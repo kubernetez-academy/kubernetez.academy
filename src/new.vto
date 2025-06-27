@@ -1,0 +1,197 @@
+---
+layout: layouts/base.vto
+title: Kubernetez Academy - Master Cloud Native Technologies
+---
+
+<!-- Hero Section -->
+<section class="pt-20 pb-16 gradient-bg text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                        Master the
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+                            Cloud Native
+                        </span>
+                        Universe
+                    </h1>
+                    <p class="text-xl text-blue-100 leading-relaxed">
+                        Embark on your cloud-native journey and become a DevOps expert. From Kubernetes to Terraform, master the technologies that power modern infrastructure.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-white text-k8s-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Start Your Journey
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-k8s-blue transition">
+                        <i class="fas fa-play mr-2"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="flex items-center space-x-6 text-blue-100">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@kubernetez.academy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="floating p-8">
+                    <img src="https://raw.githubusercontent.com/cncf/artwork/8250f22e55a0c2884f1b684caf9ea20294026ec6/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetez Logo" class="w-50 mb-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Learning Journey Section -->
+<section id="journey" class="py-20 bg-cloud-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Your Cloud Native Journey</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Follow our structured learning path designed to take you from beginner to cloud-native expert
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-k8s-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-map-marked-alt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Foundation</h3>
+                <p class="text-gray-600">Start with containerization basics and Docker fundamentals</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-cncf-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-dharmachakra text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Orchestration</h3>
+                <p class="text-gray-600">Master Kubernetes and container orchestration at scale</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-tech-purple rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-code-branch text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Infrastructure</h3>
+                <p class="text-gray-600">Learn Infrastructure as Code with Terraform and more</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-devops-green rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Advanced</h3>
+                <p class="text-gray-600">CI/CD, monitoring, security, and production best practices</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trainings Section -->
+<section id="trainings" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Training Programs</h2>
+            <p class="text-xl text-gray-600">Comprehensive courses designed to master cloud-native technologies</p>
+        </div>
+
+        <div class="mb-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {{ for training of (search.pages("type=training featured.enabled=true", "featured.order=asc").slice(0, 5)) }}
+                    {{ include "templates/index/training.vto" {training} }}
+                {{ /for }}
+            </div>
+        </div>
+
+        <div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                {{- for training of comingSoon }}
+                    {{ include "templates/index/coming-soon.vto" {training} }}
+                {{ /for }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instructors Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
+            <p class="text-xl text-gray-600">Industry veterans with decades of experience in cloud-native technologies</p>
+        </div>
+
+        <div class="grid {{ instructors.length === 1 ? 'lg:grid-cols-1 max-w-md mx-auto' : instructors.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3' }} gap-12">
+            {{ for instructor of instructors }}
+                {{ include "templates/index/instructor.vto" {instructor} }}
+            {{ /for }}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Choose Kubernetez Academy?</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-k8s-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Hands-on Learning</h3>
+                            <p class="text-gray-600">Learn by doing with real-world projects and interactive labs</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-k8s-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Live Trainings</h3>
+                            <p class="text-gray-600">Interactive sessions with real-time feedback and collaboration</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 bg-k8s-blue rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Expert-led Training</h3>
+                            <p class="text-gray-600">Learn directly from experienced practitioners in the field</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="https://placehold.co/600x400/4B9AFF/FFFFFF?text=Expert+Instructors"
+                     alt="Expert Instructors"
+                     class="rounded-2xl shadow-xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-4">Ready to Start Your Cloud Native Journey?</h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join the next generation of cloud-native professionals with our expert-led training programs
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-k8s-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-k8s-dark-blue transition transform hover:scale-105">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Enroll Now
+            </button>
+            <button class="border-2 border-gray-400 text-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition">
+                <i class="fas fa-calendar mr-2"></i>
+                Schedule Demo
+            </button>
+        </div>
+    </div>
+</section>
