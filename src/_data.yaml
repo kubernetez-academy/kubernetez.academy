@@ -2,7 +2,7 @@ instructors:
     - name: Lajos Papp
       title: Co-Founder & Instructor
       color: k8s-blue
-      image: https://placehold.co/300x300/326CE5/FFFFFF?text=Lajos+Papp
+      image: assets/img/lalyos.jpg
       bio: |
           Expert cloud-native engineer with extensive experience in Kubernetes and container orchestration.
 
@@ -17,7 +17,7 @@ instructors:
     - name: Márk Sági-Kazár
       title: Co-Founder & Instructor
       color: cncf-blue
-      image: https://placehold.co/300x300/326CE5/FFFFFF?text=Mark+Sagi-Kazar
+      image: assets/img/mark.jpg
       bio: |
           Experienced software engineer and cloud-native specialist with deep expertise in modern development practices.
 
