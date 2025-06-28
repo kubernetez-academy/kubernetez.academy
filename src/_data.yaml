@@ -14,6 +14,10 @@ instructors:
             url: https://www.linkedin.com/in/lalyos/
             color: blue-600
             hoverColor: blue-700
+          - icon: fab fa-github
+            url: https://github.com/lalyos
+            color: gray-600
+            hoverColor: gray-700
     - name: Márk Sági-Kazár
       title: Co-Founder & Instructor
       color: cncf-blue
@@ -29,6 +33,10 @@ instructors:
             url: https://www.linkedin.com/in/sagikazarmark/
             color: blue-600
             hoverColor: blue-700
+          - icon: fab fa-github
+            url: https://github.com/sagikazarmark
+            color: gray-600
+            hoverColor: gray-700
 
 comingSoon:
     - title: ArgoCD
