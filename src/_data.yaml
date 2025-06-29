@@ -10,14 +10,8 @@ instructors:
 
           Passionate about sharing knowledge and helping developers master cloud-native technologies.
       social:
-          - icon: fab fa-linkedin
-            url: https://www.linkedin.com/in/lalyos/
-            color: blue-600
-            hoverColor: blue-700
-          - icon: fab fa-github
-            url: https://github.com/lalyos
-            color: gray-600
-            hoverColor: gray-700
+          linkedin: lalyos
+          github: lalyos
     - name: Márk Sági-Kazár
       title: Co-Founder & Instructor
       color: cncf-blue
@@ -29,14 +23,8 @@ instructors:
 
           Committed to empowering developers with cutting-edge cloud-native skills and best practices.
       social:
-          - icon: fab fa-linkedin
-            url: https://www.linkedin.com/in/sagikazarmark/
-            color: blue-600
-            hoverColor: blue-700
-          - icon: fab fa-github
-            url: https://github.com/sagikazarmark
-            color: gray-600
-            hoverColor: gray-700
+          linkedin: sagikazarmark
+          github: sagikazarmark
 
 comingSoon:
     - title: ArgoCD
