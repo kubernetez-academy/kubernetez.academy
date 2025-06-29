@@ -12,7 +12,9 @@ featured:
 color: k8s-blue
 price: 249
 originalPrice: 349
-icon: fas fa-dharmachakra
+icon:
+  name: fas fa-dharmachakra
+  library: font
 heroImage: /images/kubernetes-hero.jpg
 overview: Kubernetes has become the de facto standard for container orchestration. This comprehensive training takes you from zero to production-ready, covering everything from basic concepts to advanced deployment patterns. You'll gain hands-on experience managing real applications in Kubernetes clusters.
 

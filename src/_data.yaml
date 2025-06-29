@@ -42,20 +42,30 @@ comingSoon:
     - title: ArgoCD
       description: GitOps continuous delivery for Kubernetes
       color: red-400
-      icon: fas fa-sync-alt
+      icon:
+          name: fas fa-sync-alt
+          library: font
     - title: FluxCD
       description: Modern GitOps toolkit for Kubernetes
       color: purple-400
-      icon: fas fa-stream
+      icon:
+          name: fas fa-stream
+          library: font
     - title: Kubernetes Secrets
       description: Advanced secrets management in Kubernetes
       color: indigo-400
-      icon: fas fa-key
+      icon:
+          name: fas fa-key
+          library: font
     - title: Kubernetes Observability
       description: Monitoring and logging for Kubernetes clusters
       color: green-400
-      icon: fas fa-chart-bar
+      icon:
+          name: fas fa-chart-bar
+          library: font
     - title: OpenBao/Vault
       description: Secrets management and security
       color: yellow-400
-      icon: fas fa-lock
+      icon:
+          name: fas fa-lock
+          library: font
