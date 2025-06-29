@@ -12,7 +12,7 @@ featured:
 color: orange-500
 price: 299
 originalPrice: 399
-icon: fas fa-hammer
+icon: /assets/icons/dagger.svg
 heroImage: /images/dagger-hero.jpg
 overview: Dagger revolutionizes CI/CD by providing a programmable CI/CD engine that runs pipelines as code. In this comprehensive training, you'll learn to build, test, and deploy applications using Dagger's powerful SDK, creating pipelines that are portable, fast, and maintainable.
 
