@@ -12,7 +12,9 @@ featured:
 color: blue-500
 price: 199
 originalPrice: 279
-icon: fab fa-docker
+icon:
+  name: fab fa-docker
+  library: font
 heroImage: /images/docker-hero.jpg
 overview: Docker has revolutionized how we build, ship, and run applications. This comprehensive training takes you from containerization basics to production-ready deployments. You'll master Docker fundamentals and gain the skills needed to containerize any application effectively.
 

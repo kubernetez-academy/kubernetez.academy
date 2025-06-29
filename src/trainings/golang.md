@@ -12,7 +12,9 @@ featured:
 color: cyan-500
 price: 279
 originalPrice: 379
-icon: fab fa-golang
+icon:
+  name: fab fa-golang
+  library: font
 heroImage: /images/golang-hero.jpg
 overview: Go has become the language of choice for cloud-native development, powering everything from Kubernetes to Docker to modern microservices. This comprehensive training teaches you Go programming with a specific focus on building production-ready, containerized applications and cloud-native services.
 
