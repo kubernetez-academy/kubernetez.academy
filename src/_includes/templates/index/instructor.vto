@@ -11,11 +11,16 @@
     </div>
     {{ if instructor.social }}
         <div class="flex justify-center space-x-2 mt-4">
-            {{ for social of instructor.social }}
-                <a href="{{ social.url }}" target="_blank" class="w-10 h-10 bg-{{ social.color || 'blue-600' }} rounded-full flex items-center justify-center hover:bg-{{ social.hoverColor || 'blue-700' }} transition">
-                    <i class="{{ social.icon }} text-white"></i>
+            {{ if instructor.social.linkedin }}
+                <a href="https://www.linkedin.com/in/{{ instructor.social.linkedin }}/" target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                    <i class="fab fa-linkedin text-white"></i>
                 </a>
-            {{ /for }}
+            {{ /if }}
+            {{ if instructor.social.github }}
+                <a href="https://github.com/{{ instructor.social.github }}" target="_blank" class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
+                    <i class="fab fa-github text-white"></i>
+                </a>
+            {{ /if }}
         </div>
     {{ /if }}
 </div>
