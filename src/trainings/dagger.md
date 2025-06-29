@@ -16,7 +16,7 @@ icon:
   name: dagger
   library: local
 heroImage: /images/dagger-hero.jpg
-overview: Dagger revolutionizes CI/CD by providing a programmable CI/CD engine that runs pipelines as code. In this comprehensive training, you'll learn to build, test, and deploy applications using Dagger's powerful SDK, creating pipelines that are portable, fast, and maintainable.
+overview: Dagger revolutionizes CI/CD by providing a programmable CI/CD engine that runs pipelines as code. In this comprehensive training, you'll learn to build, test, and deploy applications using Dagger's powerful, multi-language SDK, creating pipelines that are portable, fast, and maintainable.
 
 stats:
   - value: "12 Hours"
@@ -27,14 +27,11 @@ stats:
     label: "Access Duration"
 
 learningOutcomes:
-  - Build production-ready CI/CD pipelines using Dagger SDK
+  - Build production-ready CI/CD pipelines using Dagger
   - Create portable pipelines that run consistently across environments
   - Integrate Dagger with popular CI platforms (GitHub Actions, GitLab CI, Jenkins)
-  - Implement advanced pipeline patterns like multi-stage builds and parallel execution
-  - Debug and optimize pipeline performance
   - Design reusable pipeline modules and share them across teams
   - Implement security best practices in CI/CD workflows
-  - Monitor and troubleshoot pipeline failures effectively
 
 curriculum:
   - title: "Introduction to Dagger"

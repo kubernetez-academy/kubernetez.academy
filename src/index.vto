@@ -17,24 +17,14 @@ title: Kubernetez Academy - Master Cloud Native Technologies
                         Universe
                     </h1>
                     <p class="text-xl text-blue-100 leading-relaxed">
-                        Embark on your cloud-native journey and become a DevOps expert. From Kubernetes to Terraform, master the technologies that power modern infrastructure.
+                        Embark on your cloud-native journey and become a DevOps expert. From Kubernetes to GitOps, master the technologies that power modern infrastructure.
                     </p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-white text-k8s-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    <a class="bg-white text-k8s-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105" href="#trainings">
                         <i class="fas fa-rocket mr-2"></i>
                         Start Your Journey
-                    </button>
-                    <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-k8s-blue transition">
-                        <i class="fas fa-play mr-2"></i>
-                        Watch Demo
-                    </button>
-                </div>
-                <div class="flex items-center space-x-6 text-blue-100">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@kubernetez.academy</span>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="relative">
@@ -106,6 +96,10 @@ title: Kubernetez Academy - Master Cloud Native Technologies
         </div>
 
         <div>
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Coming Soon</h3>
+                <p class="text-gray-600">More exciting courses are on the way!</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
                 {{- for training of comingSoon }}
                     {{ include "templates/index/coming-soon.vto" {training} }}
@@ -143,8 +137,8 @@ title: Kubernetez Academy - Master Cloud Native Technologies
                             <i class="fas fa-check text-white text-sm"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-1">Hands-on Learning</h3>
-                            <p class="text-gray-600">Learn by doing with real-world projects and interactive labs</p>
+                            <h3 class="text-lg font-semibold mb-1">Live Trainings</h3>
+                            <p class="text-gray-600">Interactive sessions with real-time feedback and collaboration</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
@@ -152,8 +146,8 @@ title: Kubernetez Academy - Master Cloud Native Technologies
                             <i class="fas fa-check text-white text-sm"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-1">Live Trainings</h3>
-                            <p class="text-gray-600">Interactive sessions with real-time feedback and collaboration</p>
+                            <h3 class="text-lg font-semibold mb-1">Hands-on Learning</h3>
+                            <p class="text-gray-600">Learn by doing with real-world projects and interactive labs</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
