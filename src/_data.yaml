@@ -31,14 +31,14 @@ comingSoon:
       description: GitOps continuous delivery for Kubernetes
       color: red-400
       icon:
-          name: fas fa-sync-alt
-          library: font
+          name: argo
+          library: local
     - title: FluxCD
       description: Modern GitOps toolkit for Kubernetes
       color: purple-400
       icon:
-          name: fas fa-stream
-          library: font
+          name: flux
+          library: local
     - title: Kubernetes Secrets
       description: Advanced secrets management in Kubernetes
       color: indigo-400
