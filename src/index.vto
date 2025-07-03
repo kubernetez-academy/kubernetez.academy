@@ -17,14 +17,8 @@ title: Kubernetez Academy - Master Cloud Native Technologies
                         Universe
                     </h1>
                     <p class="text-xl text-blue-100 leading-relaxed">
-                        Embark on your cloud-native journey and become a DevOps expert. From Kubernetes to GitOps, master the technologies that power modern infrastructure.
+                        Embark on your cloud-native journey and become a DevOps expert. From Docker, through Kubernetes to GitOps, master the technologies that power modern infrastructure.
                     </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a class="bg-white text-k8s-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105" href="#trainings">
-                        <i class="fas fa-rocket mr-2"></i>
-                        Start Your Journey
-                    </a>
                 </div>
             </div>
             <div class="relative">
@@ -36,45 +30,18 @@ title: Kubernetez Academy - Master Cloud Native Technologies
     </div>
 </section>
 
-<!-- Learning Journey Section -->
-<section id="journey" class="py-20 bg-cloud-gray">
+<!-- Instructors Section -->
+<section id="about" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Your Cloud Native Journey</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Follow our structured learning path designed to take you from beginner to cloud-native expert
-            </p>
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
+            <p class="text-xl text-gray-600">Industry veterans with decades of experience in cloud-native technologies</p>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-8">
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-k8s-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                    <i class="fas fa-map-marked-alt text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2">Foundation</h3>
-                <p class="text-gray-600">Start with containerization basics and Docker fundamentals</p>
-            </div>
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-cncf-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                    <i class="fas fa-dharmachakra text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2">Orchestration</h3>
-                <p class="text-gray-600">Master Kubernetes and container orchestration at scale</p>
-            </div>
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-tech-purple rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                    <i class="fas fa-code-branch text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2">Infrastructure</h3>
-                <p class="text-gray-600">Learn Infrastructure as Code with Terraform and more</p>
-            </div>
-            <div class="text-center group">
-                <div class="w-16 h-16 bg-devops-green rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                    <i class="fas fa-rocket text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-2">Advanced</h3>
-                <p class="text-gray-600">CI/CD, monitoring, security, and production best practices</p>
-            </div>
+        <div class="grid {{ instructors.length === 1 ? 'lg:grid-cols-1 max-w-md mx-auto' : instructors.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3' }} gap-12">
+            {{ for instructor of instructors }}
+                {{ include "templates/index/instructor.vto" {instructor} }}
+            {{ /for }}
         </div>
     </div>
 </section>
@@ -109,24 +76,9 @@ title: Kubernetez Academy - Master Cloud Native Technologies
     </div>
 </section>
 
-<!-- Instructors Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
-            <p class="text-xl text-gray-600">Industry veterans with decades of experience in cloud-native technologies</p>
-        </div>
-
-        <div class="grid {{ instructors.length === 1 ? 'lg:grid-cols-1 max-w-md mx-auto' : instructors.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3' }} gap-12">
-            {{ for instructor of instructors }}
-                {{ include "templates/index/instructor.vto" {instructor} }}
-            {{ /for }}
-        </div>
-    </div>
-</section>
 
 <!-- About Section -->
-<section id="about" class="py-20 bg-white">
+<section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -166,26 +118,6 @@ title: Kubernetez Academy - Master Cloud Native Technologies
                      alt="Expert Instructors"
                      class="rounded-2xl shadow-xl">
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="py-20 bg-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl font-bold mb-4">Ready to Start Your Cloud Native Journey?</h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join the next generation of cloud-native professionals with our expert-led training programs
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-k8s-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-k8s-dark-blue transition transform hover:scale-105">
-                <i class="fas fa-graduation-cap mr-2"></i>
-                Enroll Now
-            </button>
-            <button class="border-2 border-gray-400 text-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition">
-                <i class="fas fa-calendar mr-2"></i>
-                Schedule Demo
-            </button>
         </div>
     </div>
 </section>
