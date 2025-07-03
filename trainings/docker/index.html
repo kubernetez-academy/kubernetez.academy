@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'k8s-blue': '#326CE5',
+                        'k8s-dark-blue': '#1E3A8A',
+                        'cncf-blue': '#4B9AFF',
+                        'cloud-gray': '#F8FAFC',
+                        'tech-purple': '#7C3AED',
+                        'devops-green': '#10B981'
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #326CE5 0%, #4B9AFF 50%, #7C3AED 100%); }
+        .tech-card { transition: all 0.3s ease; }
+        .tech-card:hover { transform: translateY(-8px); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="/assets/img/logo.webp" alt="Kubernetez Academy Logo" class="w-10 h-10 rounded-lg">
+                    <span class="text-xl font-bold text-gray-900">Kubernetez Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/#trainings" class="text-gray-600 hover:text-k8s-blue transition">Trainings</a>
+                    <a href="/#about" class="text-gray-600 hover:text-k8s-blue transition">About</a>
+                    <a href="mailto:info@kubernetez.academy" class="text-gray-600 hover:text-k8s-blue">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <!-- Hero Section -->
+<section class="bg-blue-500 pt-32 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-black/20"></div>
+    <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white">
+            <div class="mb-6">
+                <h1 class="text-5xl font-bold mb-6">
+                    Docker
+                    <span class="block text-3xl font-normal mt-2 opacity-90">Containerization Made Simple</span>
+                </h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    Master Docker containerization from the ground up. Learn to build, deploy, and manage containerized applications with confidence. The essential foundation for modern software development.
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- No Prerequisites Required -->
+<section class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">No Prerequisites Required</h2>
+            <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                Jump right in! All you need is a web browser. We provide everything else.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-globe text-k8s-blue text-xl mb-2"></i>
+                    <h3 class="font-semibold text-gray-900 mb-1">Just a Browser</h3>
+                    <p class="text-sm text-gray-600">No software installation needed</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-server text-k8s-blue text-xl mb-2"></i>
+                    <h3 class="font-semibold text-gray-900 mb-1">Lab Environment</h3>
+                    <p class="text-sm text-gray-600">Fully configured and ready to use</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Overview -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">Docker has revolutionized how we build, ship, and run applications. This comprehensive training takes you from containerization basics to production-ready deployments. You'll master Docker fundamentals and gain the skills needed to containerize any application effectively.</p>
+
+            <ul class="space-y-4 text-left max-w-2xl mx-auto">
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Understand containerization concepts and Docker architecture</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Build efficient Docker images using best practices</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Manage containers, networks, and volumes effectively</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Create multi-container applications with Docker Compose</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Implement security best practices for containerized applications</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Optimize Docker images for size and performance</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Set up CI/CD pipelines with Docker</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Deploy containerized applications to production</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Troubleshoot common Docker issues and performance problems</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Design container-native application architectures</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Curriculum -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6">
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            1
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Introduction to Containerization
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Understanding the fundamentals of containers and Docker</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        What are containers and why they matter
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Virtual machines vs containers
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Docker architecture and components
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Installing Docker and setting up the environment
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Your first container: Hello World
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Docker CLI basics and common commands
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            2
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Working with Docker Images
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Creating, managing, and optimizing Docker images</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Understanding Docker images and layers
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Pulling and pushing images from registries
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Writing effective Dockerfiles
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Multi-stage builds for optimization
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Image tagging and versioning strategies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Best practices for image security and size
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            3
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Container Management
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Running and managing Docker containers effectively</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container lifecycle management
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Port mapping and networking basics
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Environment variables and configuration
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container logs and monitoring
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Resource limits and constraints
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container health checks and restart policies
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            4
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Data Management and Volumes
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Managing persistent data in containerized applications</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Understanding Docker volumes
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Bind mounts vs named volumes
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Volume drivers and plugins
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Data backup and migration strategies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Sharing data between containers
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Temporary filesystems and security
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            5
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Docker Networking
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Container networking and service communication</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Docker networking fundamentals
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Bridge, host, and overlay networks
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container-to-container communication
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Service discovery patterns
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Network security and isolation
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Load balancing and proxy configuration
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            6
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Multi-Container Applications
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Building complex applications with Docker Compose</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Introduction to Docker Compose
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Writing docker-compose.yml files
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Service dependencies and startup order
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Environment-specific configurations
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Scaling services with Compose
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Development workflows with Compose
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            7
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Production Deployment Patterns
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Deploying containerized applications to production</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Production deployment strategies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container orchestration basics
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Health checks and monitoring in production
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Rolling updates and blue-green deployments
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container registry management
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Backup and disaster recovery
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            8
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Security Best Practices
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Securing containerized applications and infrastructure</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container security fundamentals
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Image vulnerability scanning
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Runtime security considerations
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Secrets management in containers
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        User permissions and privilege escalation
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Security scanning and compliance
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            9
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Performance Optimization
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Optimizing Docker performance and resource usage</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Image optimization techniques
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container resource monitoring
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Performance tuning strategies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Debugging performance issues
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Best practices for production workloads
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Cost optimization strategies
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2 mb-4">
+                        <img src="/assets/img/logo.webp" alt="Kubernetez Academy Logo" class="w-8 h-8 rounded-lg">
+                        <span class="text-xl font-bold">Kubernetez Academy</span>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Courses</h3>
+                    <ul class="space-y-2 text-gray-400">
+                            <li><a href="/trainings/kubernetes-essentials/" class="hover:text-white transition">Kubernetes Essentials</a></li>
+                            <li><a href="/trainings/docker/" class="hover:text-white transition">Docker</a></li>
+                            <li><a href="/trainings/dagger/" class="hover:text-white transition">Dagger</a></li>
+                            <li><a href="/trainings/golang/" class="hover:text-white transition">Go</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="mailto:info@kubernetez.academy" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:info@kubernetez.academy" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="text-gray-400">
+                        <a href="mailto:info@kubernetez.academy" class="hover:text-white transition">
+                            <i class="fas fa-envelope mr-2"></i>info@kubernetez.academy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Kubernetez Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle navigation links
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const targetId = href.substring(2); // Remove /# prefix
+
+                // If we're on the home page, scroll to the section
+                if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    const target = document.querySelector('#' + targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // If we're on a different page, let the link navigate normally
+                // The browser will handle going to the home page and scrolling to the section
+            });
+        });
+
+        // Handle regular hash links for same-page navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95');
+            } else {
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+</body>
+</html>

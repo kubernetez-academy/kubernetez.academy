@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Essentials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'k8s-blue': '#326CE5',
+                        'k8s-dark-blue': '#1E3A8A',
+                        'cncf-blue': '#4B9AFF',
+                        'cloud-gray': '#F8FAFC',
+                        'tech-purple': '#7C3AED',
+                        'devops-green': '#10B981'
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #326CE5 0%, #4B9AFF 50%, #7C3AED 100%); }
+        .tech-card { transition: all 0.3s ease; }
+        .tech-card:hover { transform: translateY(-8px); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="/assets/img/logo.webp" alt="Kubernetez Academy Logo" class="w-10 h-10 rounded-lg">
+                    <span class="text-xl font-bold text-gray-900">Kubernetez Academy</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/#trainings" class="text-gray-600 hover:text-k8s-blue transition">Trainings</a>
+                    <a href="/#about" class="text-gray-600 hover:text-k8s-blue transition">About</a>
+                    <a href="mailto:info@kubernetez.academy" class="text-gray-600 hover:text-k8s-blue">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <!-- Hero Section -->
+<section class="bg-k8s-blue pt-32 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-black/20"></div>
+    <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center text-white">
+            <div class="mb-6">
+                <h1 class="text-5xl font-bold mb-6">
+                    Kubernetes Essentials
+                    <span class="block text-3xl font-normal mt-2 opacity-90">Container Orchestration Fundamentals</span>
+                </h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    Master the fundamentals of Kubernetes container orchestration. Learn to deploy, manage, and scale applications in production-ready Kubernetes clusters with confidence.
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- No Prerequisites Required -->
+<section class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">No Prerequisites Required</h2>
+            <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                Jump right in! All you need is a web browser. We provide everything else.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-globe text-k8s-blue text-xl mb-2"></i>
+                    <h3 class="font-semibold text-gray-900 mb-1">Just a Browser</h3>
+                    <p class="text-sm text-gray-600">No software installation needed</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-server text-k8s-blue text-xl mb-2"></i>
+                    <h3 class="font-semibold text-gray-900 mb-1">Lab Environment</h3>
+                    <p class="text-sm text-gray-600">Fully configured and ready to use</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Overview -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">Kubernetes has become the de facto standard for container orchestration. This comprehensive training takes you from zero to production-ready, covering everything from basic concepts to advanced deployment patterns. You'll gain hands-on experience managing real applications in Kubernetes clusters.</p>
+
+            <ul class="space-y-4 text-left max-w-2xl mx-auto">
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Deploy and manage applications on Kubernetes clusters</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Understand Kubernetes architecture and core components</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Create and manage Pods, Services, Deployments, and other resources</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Implement service discovery and load balancing</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Configure persistent storage and data management</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Set up monitoring, logging, and observability</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Implement security best practices and RBAC</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Troubleshoot common Kubernetes issues effectively</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Design scalable and resilient application architectures</span>
+                </li>
+                <li class="flex items-start">
+                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <span class="text-gray-700">Automate deployments with GitOps workflows</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Curriculum -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6">
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            1
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Kubernetes Fundamentals
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Understanding the core concepts and architecture of Kubernetes</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        What is Kubernetes and why it matters
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Kubernetes architecture overview
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Master and worker node components
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Container runtime and networking basics
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Setting up a local development environment
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        kubectl CLI essentials
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            2
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Core Kubernetes Objects
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Working with fundamental Kubernetes resources</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Pods: The smallest deployable units
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        ReplicaSets and Deployments
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Services and service discovery
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        ConfigMaps and Secrets
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Namespaces and resource organization
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Labels and selectors
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            3
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Application Deployment Patterns
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Deploying real applications with best practices</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Multi-tier application deployment
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Rolling updates and rollback strategies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Health checks and readiness probes
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Resource requests and limits
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Horizontal Pod Autoscaling
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Deployment strategies (Blue-Green, Canary)
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            4
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Networking and Service Mesh
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Understanding Kubernetes networking and communication</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Cluster networking fundamentals
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Service types (ClusterIP, NodePort, LoadBalancer)
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Ingress controllers and routing
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Network policies and security
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        DNS resolution in Kubernetes
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Introduction to service mesh concepts
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            5
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Storage and Data Management
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Managing persistent data in Kubernetes</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Volumes and volume types
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Persistent Volumes and Persistent Volume Claims
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Storage classes and dynamic provisioning
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        StatefulSets for stateful applications
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Database deployment patterns
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Backup and disaster recovery strategies
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            6
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Configuration Management
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Managing application configuration and secrets</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        ConfigMaps for application configuration
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Secrets management best practices
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Environment-specific configurations
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Configuration injection patterns
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        External secret management integration
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        GitOps configuration workflows
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            7
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Security and RBAC
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Implementing security best practices in Kubernetes</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Authentication and authorization
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Role-Based Access Control (RBAC)
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Pod Security Standards
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Network security and policies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Image security and scanning
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Secrets encryption at rest
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            8
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Monitoring and Observability
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Implementing comprehensive monitoring and logging</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Metrics collection with Prometheus
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Visualization with Grafana
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Centralized logging with ELK stack
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Distributed tracing concepts
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Alerting and notification strategies
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Performance monitoring and optimization
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            9
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Troubleshooting and Debugging
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Diagnosing and resolving common Kubernetes issues</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        kubectl debugging commands
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Pod and container troubleshooting
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Network connectivity issues
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Resource constraint problems
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Application startup and crash debugging
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Cluster-level troubleshooting
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            10
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Production Best Practices
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">Preparing applications and clusters for production</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Cluster sizing and capacity planning
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        High availability patterns
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Disaster recovery planning
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Security hardening checklist
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Performance optimization
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Cost optimization strategies
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2 mb-4">
+                        <img src="/assets/img/logo.webp" alt="Kubernetez Academy Logo" class="w-8 h-8 rounded-lg">
+                        <span class="text-xl font-bold">Kubernetez Academy</span>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Courses</h3>
+                    <ul class="space-y-2 text-gray-400">
+                            <li><a href="/trainings/kubernetes-essentials/" class="hover:text-white transition">Kubernetes Essentials</a></li>
+                            <li><a href="/trainings/docker/" class="hover:text-white transition">Docker</a></li>
+                            <li><a href="/trainings/dagger/" class="hover:text-white transition">Dagger</a></li>
+                            <li><a href="/trainings/golang/" class="hover:text-white transition">Go</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="mailto:info@kubernetez.academy" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:info@kubernetez.academy" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-k8s-blue transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="text-gray-400">
+                        <a href="mailto:info@kubernetez.academy" class="hover:text-white transition">
+                            <i class="fas fa-envelope mr-2"></i>info@kubernetez.academy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Kubernetez Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle navigation links
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const targetId = href.substring(2); // Remove /# prefix
+
+                // If we're on the home page, scroll to the section
+                if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    const target = document.querySelector('#' + targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // If we're on a different page, let the link navigate normally
+                // The browser will handle going to the home page and scrolling to the section
+            });
+        });
+
+        // Handle regular hash links for same-page navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95');
+            } else {
+                nav.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+</body>
+</html>
