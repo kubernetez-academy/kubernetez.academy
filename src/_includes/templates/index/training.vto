@@ -1,14 +1,16 @@
 {{ set icon = "fas fa-dharmachakra" }}
 
-<div class="tech-card bg-white p-6 rounded-xl shadow-lg border hover:shadow-xl">
-    <div class="w-12 h-12 bg-{{ training.color }} rounded-lg flex items-center justify-center mb-4">
-        {{ if training.icon.library == "font" }}
-            <i class="{{ training.icon.name }} text-white"></i>
-        {{ else }}
-            <img src="{{ training.icon.name |> icon(training.icon.library || "local") }}" alt="{{ training.title }} icon" class="w-6 h-6" style="filter: brightness(0) invert(1);">
-        {{ /if }}
+<a href="{{ training.url }}" class="block">
+    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border hover:shadow-xl transition-shadow cursor-pointer">
+        <div class="w-12 h-12 bg-{{ training.color }} rounded-lg flex items-center justify-center mb-4">
+            {{ if training.icon.library == "font" }}
+                <i class="{{ training.icon.name }} text-white"></i>
+            {{ else }}
+                <img src="{{ training.icon.name |> icon(training.icon.library || "local") }}" alt="{{ training.title }} icon" class="w-6 h-6" style="filter: brightness(0) invert(1);">
+            {{ /if }}
+        </div>
+        <h3 class="text-xl font-semibold mb-2">{{ training.featured.title ? training.featured.title : training.title }}</h3>
+        <p class="text-gray-600 mb-4">{{ training.featured.description ? training.featured.description : training.description }}</p>
+        <span class="text-sm text-{{ training.color }} font-medium hover:underline">View Details →</span>
     </div>
-    <h3 class="text-xl font-semibold mb-2">{{ training.featured.title ? training.featured.title : training.title }}</h3>
-    <p class="text-gray-600 mb-4">{{ training.featured.description ? training.featured.description : training.description }}</p>
-    <a href="{{ training.url }}" class="text-sm text-{{ training.color }} font-medium hover:underline">View Details →</a>
-</div>
+</a>

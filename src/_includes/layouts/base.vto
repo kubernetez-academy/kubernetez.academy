@@ -43,17 +43,14 @@
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center space-x-2">
                     <img src="/assets/img/logo.webp" alt="Kubernetez Academy Logo" class="w-10 h-10 rounded-lg">
                     <span class="text-xl font-bold text-gray-900">Kubernetez Academy</span>
-                </div>
+                </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#journey" class="text-gray-600 hover:text-k8s-blue transition">Journey</a>
-                    <a href="#trainings" class="text-gray-600 hover:text-k8s-blue transition">Trainings</a>
-                    <a href="#about" class="text-gray-600 hover:text-k8s-blue transition">About</a>
-                    <button class="bg-k8s-blue text-white px-6 py-2 rounded-lg hover:bg-k8s-dark-blue transition">
-                        Start Learning
-                    </button>
+                    <a href="/#trainings" class="text-gray-600 hover:text-k8s-blue transition">Trainings</a>
+                    <a href="/#about" class="text-gray-600 hover:text-k8s-blue transition">About</a>
+                    <a href="mailto:info@kubernetez.academy" class="text-gray-600 hover:text-k8s-blue">Contact</a>
                 </div>
             </div>
         </div>
@@ -67,11 +64,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
+                    <a href="/" class="flex items-center space-x-2 mb-4">
                         <img src="/assets/img/logo.webp" alt="Kubernetez Academy Logo" class="w-8 h-8 rounded-lg">
                         <span class="text-xl font-bold">Kubernetez Academy</span>
-                    </div>
-                    <p class="text-gray-400">Empowering the next generation of cloud-native professionals</p>
+                    </a>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Courses</h3>
@@ -84,8 +80,7 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Company</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition">Instructors</a></li>
+                        <li><a href="/#about" class="hover:text-white transition">About Us</a></li>
                         <li><a href="mailto:info@kubernetez.academy" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
@@ -119,7 +114,28 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Handle navigation links
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const targetId = href.substring(2); // Remove /# prefix
+
+                // If we're on the home page, scroll to the section
+                if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    const target = document.querySelector('#' + targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // If we're on a different page, let the link navigate normally
+                // The browser will handle going to the home page and scrolling to the section
+            });
+        });
+
+        // Handle regular hash links for same-page navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
