@@ -5,10 +5,13 @@ instructors:
       image: assets/img/lalyos.jpg
       bio: |
           Expert cloud-native engineer with extensive experience in Kubernetes and container orchestration.
+          
+          Delivered 100+ Docker and Kubernetes trainings.
 
-          Specializes in practical, hands-on training approaches that prepare students for real-world challenges.
+          Evangelized Docker in Hungary since 2014: founder of the Docker meetup.
 
-          Passionate about sharing knowledge and helping developers master cloud-native technologies.
+          Passionate about sharing knowledge and helping developers master cloud-native technologies. 
+          He is a frequent speaker at conferences and local meetups.
       social:
           linkedin: lalyos
           github: lalyos
