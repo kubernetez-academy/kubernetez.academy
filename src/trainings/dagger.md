@@ -4,27 +4,15 @@ type: training
 title: Dagger
 subtitle: Advanced CI/CD Pipeline Engineering
 description: Master the art of building portable, reproducible CI/CD pipelines with Dagger. Learn to create powerful automation workflows that run anywhere - from your laptop to production.
-badge: Advanced Level
 featured:
     enabled: true
     description: Programmable CI/CD engine that runs your pipelines in containers.
     order: 30
 color: orange-500
-price: 299
-originalPrice: 399
 icon:
   name: dagger
   library: local
-heroImage: /images/dagger-hero.jpg
 overview: Dagger revolutionizes CI/CD by providing a programmable CI/CD engine that runs pipelines as code. In this comprehensive training, you'll learn to build, test, and deploy applications using Dagger's powerful, multi-language SDK, creating pipelines that are portable, fast, and maintainable.
-
-stats:
-  - value: "12 Hours"
-    label: "Training Content"
-  - value: "25+"
-    label: "Hands-on Labs"
-  - value: "3 Months"
-    label: "Access Duration"
 
 learningOutcomes:
   - Build production-ready CI/CD pipelines using Dagger
@@ -121,106 +109,4 @@ curriculum:
       - "Governance and standards"
       - "Documentation best practices"
       - "Community and ecosystem"
-
-prerequisites:
-  - "Basic understanding of CI/CD concepts"
-  - "Experience with Docker and containerization"
-  - "Familiarity with Git and version control"
-  - "Basic programming knowledge (Go, Python, or JavaScript preferred)"
-  - "Command line proficiency"
-  - "Understanding of software development lifecycle"
-
-tools:
-  - name: "Dagger"
-    version: "v0.9+"
-    icon: "fas fa-cogs"
-  - name: "Docker"
-    version: "v20+"
-    icon: "fab fa-docker"
-  - name: "Git"
-    version: "v2.30+"
-    icon: "fab fa-git-alt"
-  - name: "VS Code"
-    version: "Latest"
-    icon: "fas fa-code"
-  - name: "Go"
-    version: "v1.21+"
-    icon: "fab fa-golang"
-  - name: "Node.js"
-    version: "v18+"
-    icon: "fab fa-node-js"
-
-instructor:
-  name: "Mark Siebert"
-  title: "DevOps Architect & Dagger Expert"
-  bio: "Mark is a seasoned DevOps engineer with over 10 years of experience building CI/CD systems at scale. He's been working with Dagger since its early days and has helped numerous organizations modernize their deployment pipelines. Mark is a frequent speaker at DevOps conferences and contributes to open-source projects in the CI/CD space."
-  image: "/images/instructors/mark-siebert.jpg"
-  social:
-    - icon: "fab fa-linkedin"
-      url: "https://linkedin.com/in/marksiebert"
-    - icon: "fab fa-github"
-      url: "https://github.com/marksiebert"
-    - icon: "fab fa-twitter"
-      url: "https://twitter.com/marksiebert"
-
-guarantee: "30-day money-back guarantee - no questions asked"
 ---
-
-## What Makes This Training Special?
-
-This isn't just another CI/CD course. Our Dagger training is built by practitioners who use Dagger in production environments daily. You'll learn not just the how, but the why behind modern pipeline engineering.
-
-### Hands-On Learning Approach
-
-Every concept is reinforced with practical exercises:
-
-- **Real-World Projects**: Build actual pipelines for sample applications
-- **Live Debugging Sessions**: Learn to troubleshoot pipeline issues effectively
-- **Performance Optimization**: Hands-on exercises to speed up your pipelines
-- **Security Implementation**: Practical security hardening techniques
-
-### Industry-Relevant Scenarios
-
-- Migrating from Jenkins to Dagger
-- Implementing blue-green deployments
-- Building multi-cloud deployment pipelines
-- Creating reusable pipeline modules
-- Implementing compliance controls
-
-## Course Materials
-
-- **Comprehensive Lab Environment**: Pre-configured development environment
-- **Source Code Repository**: All examples and exercises with detailed README files
-- **Cheat Sheets**: Quick reference guides for Dagger commands and patterns
-- **Video Recordings**: Access to all training sessions for review
-- **Community Access**: Join our exclusive Slack workspace for ongoing support
-
-## What Students Say
-
-> "This Dagger training transformed how we think about CI/CD. Mark's practical approach and real-world examples made complex concepts easy to understand and implement."
->
-> *— Sarah Chen, Senior DevOps Engineer at TechCorp*
-
-> "The hands-on labs were incredible. By the end of the course, I had built three different pipeline architectures that I immediately started using at work."
->
-> *— David Rodriguez, Platform Engineer at StartupXYZ*
-
-## Certification
-
-Upon completion, you'll receive:
-
-- **Certificate of Completion** with detailed skill verification
-- **Digital Badge** for your LinkedIn profile
-- **Portfolio Projects** showcasing your Dagger expertise
-- **Reference Letter** from the instructor (upon request)
-
-## Next Steps After Training
-
-- Join our monthly Dagger community calls
-- Access to advanced workshops and masterclasses
-- Priority support for implementation questions
-- Invitation to our annual DevOps Summit
-
----
-
-*Ready to revolutionize your CI/CD pipelines? Enroll now and start building the future of software delivery.*
