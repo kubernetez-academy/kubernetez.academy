@@ -1,13 +1,12 @@
----
 layout: layouts/training.vto
 type: training
 title: Docker
 subtitle: Containerization Made Simple
 description: Master Docker containerization from the ground up. Learn to build, deploy, and manage containerized applications with confidence. The essential foundation for modern software development.
 featured:
-    enabled: true
-    description: Containerization fundamentals for modern application deployment.
-    order: 20
+  enabled: true
+  description: Containerization fundamentals for modern application deployment.
+  order: 20
 color: blue-500
 icon:
   name: fab fa-docker
@@ -116,4 +115,3 @@ curriculum:
       - "Debugging performance issues"
       - "Best practices for production workloads"
       - "Cost optimization strategies"
----

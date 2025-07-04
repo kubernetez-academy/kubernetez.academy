@@ -1,13 +1,12 @@
----
 layout: layouts/training.vto
 type: training
 title: Dagger
 subtitle: Advanced CI/CD Pipeline Engineering
 description: Master the art of building portable, reproducible CI/CD pipelines with Dagger. Learn to create powerful automation workflows that run anywhere - from your laptop to production.
 featured:
-    enabled: true
-    description: Programmable CI/CD engine that runs your pipelines in containers.
-    order: 30
+  enabled: true
+  description: Programmable CI/CD engine that runs your pipelines in containers.
+  order: 30
 color: orange-500
 icon:
   name: dagger
@@ -109,4 +108,3 @@ curriculum:
       - "Governance and standards"
       - "Documentation best practices"
       - "Community and ecosystem"
----

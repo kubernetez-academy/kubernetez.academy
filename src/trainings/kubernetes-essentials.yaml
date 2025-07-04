@@ -1,13 +1,12 @@
----
 layout: layouts/training.vto
 type: training
 title: Kubernetes Essentials
 subtitle: Container Orchestration Fundamentals
 description: Master the fundamentals of Kubernetes container orchestration. Learn to deploy, manage, and scale applications in production-ready Kubernetes clusters with confidence.
 featured:
-    enabled: true
-    description: Master container orchestration with hands-on Kubernetes training.
-    order: 10
+  enabled: true
+  description: Master container orchestration with hands-on Kubernetes training.
+  order: 10
 color: k8s-blue
 icon:
   name: fas fa-dharmachakra
@@ -126,4 +125,3 @@ curriculum:
       - "Security hardening checklist"
       - "Performance optimization"
       - "Cost optimization strategies"
----

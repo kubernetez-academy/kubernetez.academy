@@ -1,13 +1,12 @@
----
 layout: layouts/training.vto
 type: training
 title: Go
 subtitle: Modern Backend Development with Go
 description: Master Go programming with a focus on building cloud-native applications, microservices, and containerized backends. Learn the language that powers Kubernetes, Docker, and modern infrastructure.
 featured:
-    enabled: true
-    description: Learn Go programming for cloud-native application development.
-    order: 40
+  enabled: true
+  description: Learn Go programming for cloud-native application development.
+  order: 40
 color: cyan-500
 icon:
   name: fab fa-golang
@@ -126,4 +125,3 @@ curriculum:
       - "Benchmarking and performance testing"
       - "Scaling strategies and bottleneck identification"
       - "Production monitoring and alerting"
----
