@@ -18,11 +18,11 @@ learningOutcomes:
   - Command-line basics (kubectl)
   - Deploy and manage applications on Kubernetes clusters
   - Create and manage Pods, Services, Deployments
-  - Manage frequently changing data: ConfigMaps and Secrets
+  - "Manage frequently changing data: ConfigMaps and Secrets"
   - Implement health-checks
-  - Expose application to the world: Ingress
+  - "Expose application to the world: Ingress"
   - Troubleshoot common Kubernetes issues effectively
-  
+
 curriculum:
   - title: "Kubernetes architecture"
     description: "Understanding the core concepts and architecture of Kubernetes"
@@ -123,4 +123,3 @@ curriculum:
       - "Network connectivity issues"
       - "Application startup and crash debugging"
       - "Challenge: fix a broken deployment"
-
