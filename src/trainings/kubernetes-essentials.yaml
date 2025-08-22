@@ -14,114 +14,113 @@ icon:
 overview: Kubernetes has become the de facto standard for container orchestration. This comprehensive training takes you from zero to production-ready, covering everything from basic concepts to advanced deployment patterns. You'll gain hands-on experience managing real applications in Kubernetes clusters.
 
 learningOutcomes:
-  - Deploy and manage applications on Kubernetes clusters
   - Understand Kubernetes architecture and core components
-  - Create and manage Pods, Services, Deployments, and other resources
-  - Implement service discovery and load balancing
-  - Configure persistent storage and data management
-  - Set up monitoring, logging, and observability
-  - Implement security best practices and RBAC
+  - Command-line basics (kubectl)
+  - Deploy and manage applications on Kubernetes clusters
+  - Create and manage Pods, Services, Deployments
+  - Manage frequently changing data: ConfigMaps and Secrets
+  - Implement health-checks
+  - Expose application to the world: Ingress
   - Troubleshoot common Kubernetes issues effectively
-  - Design scalable and resilient application architectures
-  - Automate deployments with GitOps workflows
-
+  
 curriculum:
-  - title: "Kubernetes Fundamentals"
+  - title: "Kubernetes architecture"
     description: "Understanding the core concepts and architecture of Kubernetes"
     topics:
-      - "What is Kubernetes and why it matters"
+      - "A little history"
       - "Kubernetes architecture overview"
       - "Master and worker node components"
-      - "Container runtime and networking basics"
-      - "Setting up a local development environment"
-      - "kubectl CLI essentials"
+      - "Definition of Pod"
+      - "Workload Patterns"
+      - "ReplicaSet and Deployment"
+      - "Init Containers and Sidecar pattern"
 
-  - title: "Core Kubernetes Objects"
-    description: "Working with fundamental Kubernetes resources"
+  - title: "Interacting with a Cluster"
+    description: "The basics of working with kubectl"
     topics:
-      - "Pods: The smallest deployable units"
-      - "ReplicaSets and Deployments"
-      - "Services and service discovery"
-      - "ConfigMaps and Secrets"
-      - "Namespaces and resource organization"
-      - "Labels and selectors"
+      - "Configuring kubectl: KUBECONFIG"
+      - "Basic verbs: get and describe"
+      - "First deployment"
+      - "Observe: Pod, ReplicaSet and Deployment"
+      - "Output formatting"
+      - "The definition of Namespace and Context"
 
-  - title: "Application Deployment Patterns"
-    description: "Deploying real applications with best practices"
+  - title: "Exposing Applications"
+    description: "Accessing web based application from inside and outside of the cluster"
     topics:
-      - "Multi-tier application deployment"
-      - "Rolling updates and rollback strategies"
-      - "Health checks and readiness probes"
-      - "Resource requests and limits"
-      - "Horizontal Pod Autoscaling"
-      - "Deployment strategies (Blue-Green, Canary)"
+      - "Labeling resources"
+      - "Filtering and grouping with selector"
+      - "Annotating resources"
+      - "Services: Stable Endpoints for workloads"
+      - "Service types: ClusterIP and NodePort"
+      - "Ingress for custom domains"
 
-  - title: "Networking and Service Mesh"
-    description: "Understanding Kubernetes networking and communication"
+  - title: "Managing Resources Declaratively"
+    description: "Welcome to the k8s yaml hell ;)"
     topics:
-      - "Cluster networking fundamentals"
-      - "Service types (ClusterIP, NodePort, LoadBalancer)"
-      - "Ingress controllers and routing"
-      - "Network policies and security"
-      - "DNS resolution in Kubernetes"
-      - "Introduction to service mesh concepts"
+      - "Imperative vs. Declarative"
+      - "How k8s stores the Resources"
+      - "The 3 main parts of the k8s Object"
+      - "Deployin manifest files from a git repo"
 
-  - title: "Storage and Data Management"
-    description: "Managing persistent data in Kubernetes"
+  - title: "Desired State"
+    description: "Day-2 operations of Deployments"
     topics:
-      - "Volumes and volume types"
-      - "Persistent Volumes and Persistent Volume Claims"
-      - "Storage classes and dynamic provisioning"
-      - "StatefulSets for stateful applications"
-      - "Database deployment patterns"
-      - "Backup and disaster recovery strategies"
+      - "Definition of Orchestration"
+      - "Scaling up and down"
+      - "Fault Tolerance: what happens if a pod fails?"
+      - "Rolling out Application updates"
+      - "Rolling back"
 
   - title: "Configuration Management"
-    description: "Managing application configuration and secrets"
+    description: "How to manage configurations and Secrets"
     topics:
-      - "ConfigMaps for application configuration"
-      - "Secrets management best practices"
-      - "Environment-specific configurations"
-      - "Configuration injection patterns"
-      - "External secret management integration"
-      - "GitOps configuration workflows"
+      - "Configuration vs Code"
+      - "ConfigMap patterns: properties vs files"
+      - "Using ConfigMaps as env variable"
+      - "Mounting ConfigMaps into the filesystem"
+      - "Secrets"
+      - "Encoding != Encryption"
+      - "Options for Secrets and GitOps"
 
-  - title: "Security and RBAC"
-    description: "Implementing security best practices in Kubernetes"
+  - title: "Health Checks"
+    description: "Ensuring healthy applications"
     topics:
-      - "Authentication and authorization"
-      - "Role-Based Access Control (RBAC)"
-      - "Pod Security Standards"
-      - "Network security and policies"
-      - "Image security and scanning"
-      - "Secrets encryption at rest"
+      - "Meaning of Readiness without health checks"
+      - "Readiness Probe"
+      - "Liveness Probe"
+      - "Startup Probe"
+      - "Types and Parameters: time and threshold related"
+      - "Health check patterns: with or without backends"
 
-  - title: "Monitoring and Observability"
-    description: "Implementing comprehensive monitoring and logging"
+  - title: "Kubernetes package management"
+    description: "Helm and Kustomize"
     topics:
-      - "Metrics collection with Prometheus"
-      - "Visualization with Grafana"
-      - "Centralized logging with ELK stack"
-      - "Distributed tracing concepts"
-      - "Alerting and notification strategies"
-      - "Performance monitoring and optimization"
+      - "Helm architecture"
+      - "Chart directory structure"
+      - "Examine the built-in boilerplate chart"
+      - "Kubernetes Resource templating"
+      - "Onechart: one chart to rule them all"
+      - "Kustomize: Template free helm alternative"
+      - "Combining Helm and Kustomize"
+
+  - title: "Advanced Deployment Strategies"
+    description: "Alternatives to rolling update"
+    topics:
+      - "Rolling update under the hood"
+      - "Recreate: the other built-in strategy"
+      - "Blue-Green startegy"
+      - "Canary startegy"
+      - "A/B startegy"
 
   - title: "Troubleshooting and Debugging"
     description: "Diagnosing and resolving common Kubernetes issues"
     topics:
+      - "Useful tools"
+      - "Pod and Container lifecycle"
       - "kubectl debugging commands"
       - "Pod and container troubleshooting"
       - "Network connectivity issues"
-      - "Resource constraint problems"
       - "Application startup and crash debugging"
-      - "Cluster-level troubleshooting"
+      - "Challenge: fix a broken deployment"
 
-  - title: "Production Best Practices"
-    description: "Preparing applications and clusters for production"
-    topics:
-      - "Cluster sizing and capacity planning"
-      - "High availability patterns"
-      - "Disaster recovery planning"
-      - "Security hardening checklist"
-      - "Performance optimization"
-      - "Cost optimization strategies"
