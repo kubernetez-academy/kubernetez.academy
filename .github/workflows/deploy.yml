@@ -41,7 +41,7 @@ jobs:
 
                   # Add and commit changes
                   git add .
-                  git commit -m "https://github.com/kubernetez-academy/kubernetez.academy/commit/${GITHUB_SHA}" || echo "No changes to commit"
+                  git commit -m "generated from: https://github.com/kubernetez-academy/kubernetez.academy/commit/${GITHUB_SHA}" || echo "No changes to commit"
 
                   # Push changes
                   git push origin main
