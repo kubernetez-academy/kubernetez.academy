@@ -109,7 +109,11 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
-            <p class="text-lg text-gray-600 mb-8 leading-relaxed">Docker has revolutionized how we build, ship, and run applications. This comprehensive training takes you from containerization basics to production-ready deployments. You'll master Docker fundamentals and gain the skills needed to containerize any application effectively.</p>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">This training focuses on a dev/devops perspective. You start from
+packaging your application (with whatever language you use) then run your
+complete stack (with db, proxy, loadbalancer) all in containers, to reach
+dev-prod parity.
+</p>
 
             <ul class="space-y-4 text-left max-w-2xl mx-auto">
                 <li class="flex items-start">
@@ -140,31 +144,7 @@
                     <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
                         <i class="fas fa-check text-white text-xs"></i>
                     </div>
-                    <span class="text-gray-700">Implement security best practices for containerized applications</span>
-                </li>
-                <li class="flex items-start">
-                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
-                        <i class="fas fa-check text-white text-xs"></i>
-                    </div>
-                    <span class="text-gray-700">Optimize Docker images for size and performance</span>
-                </li>
-                <li class="flex items-start">
-                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
-                        <i class="fas fa-check text-white text-xs"></i>
-                    </div>
-                    <span class="text-gray-700">Set up CI/CD pipelines with Docker</span>
-                </li>
-                <li class="flex items-start">
-                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
-                        <i class="fas fa-check text-white text-xs"></i>
-                    </div>
-                    <span class="text-gray-700">Deploy containerized applications to production</span>
-                </li>
-                <li class="flex items-start">
-                    <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
-                        <i class="fas fa-check text-white text-xs"></i>
-                    </div>
-                    <span class="text-gray-700">Troubleshoot common Docker issues and performance problems</span>
+                    <span class="text-gray-700">Deploy containerized applications to dev/test/production</span>
                 </li>
                 <li class="flex items-start">
                     <div class="w-6 h-6 bg-devops-green rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">
@@ -210,11 +190,7 @@
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Installing Docker and setting up the environment
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Your first container: Hello World
+                        Your first containers
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
@@ -239,7 +215,7 @@
                 <div class="grid md:grid-cols-2 gap-2">
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Understanding Docker images and layers
+                        Understanding the difference and connection between Docker containers vs images
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
@@ -257,10 +233,6 @@
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
                         Image tagging and versioning strategies
                     </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Best practices for image security and size
-                    </div>
                 </div>
             </div>
             <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
@@ -270,37 +242,29 @@
                             3
                         </span>
                         <h3 class="text-xl font-semibold text-gray-900">
-                            Container Management
+                            Docker Networking
                         </h3>
                     </div>
                 </div>
 
-                <p class="text-gray-600 mb-4">Running and managing Docker containers effectively</p>
+                <p class="text-gray-600 mb-4">Container networking and service communication</p>
 
                 <div class="grid md:grid-cols-2 gap-2">
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container lifecycle management
+                        Docker networking fundamentals
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Port mapping and networking basics
+                        Bridge, host, none and overlay networks
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Environment variables and configuration
+                        Container-to-container communication
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container logs and monitoring
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Resource limits and constraints
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container health checks and restart policies
+                        Service discovery patterns
                     </div>
                 </div>
             </div>
@@ -309,6 +273,39 @@
                     <div class="flex items-center">
                         <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
                             4
+                        </span>
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            Exposing Services
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-4">How to reach services from inside and outside of your local env</p>
+
+                <div class="grid md:grid-cols-2 gap-2">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Access the service within the same container
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Access the service from an other container
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Access the service from outside network
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
+                        Declare the port your app listens on (EXPOSE)
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
+                            5
                         </span>
                         <h3 class="text-xl font-semibold text-gray-900">
                             Data Management and Volumes
@@ -333,56 +330,7 @@
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Data backup and migration strategies
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
                         Sharing data between containers
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Temporary filesystems and security
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center">
-                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
-                            5
-                        </span>
-                        <h3 class="text-xl font-semibold text-gray-900">
-                            Docker Networking
-                        </h3>
-                    </div>
-                </div>
-
-                <p class="text-gray-600 mb-4">Container networking and service communication</p>
-
-                <div class="grid md:grid-cols-2 gap-2">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Docker networking fundamentals
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Bridge, host, and overlay networks
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container-to-container communication
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Service discovery patterns
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Network security and isolation
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Load balancing and proxy configuration
                     </div>
                 </div>
             </div>
@@ -411,15 +359,7 @@
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Service dependencies and startup order
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
                         Environment-specific configurations
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Scaling services with Compose
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
@@ -444,109 +384,23 @@
                 <div class="grid md:grid-cols-2 gap-2">
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Production deployment strategies
+                        Add a proxy to the front
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container orchestration basics
+                        Free HTTPS certificate
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Health checks and monitoring in production
+                        Rolling updates
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Rolling updates and blue-green deployments
+                        Authentication
                     </div>
                     <div class="flex items-center text-sm text-gray-600">
                         <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container registry management
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Backup and disaster recovery
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center">
-                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
-                            8
-                        </span>
-                        <h3 class="text-xl font-semibold text-gray-900">
-                            Security Best Practices
-                        </h3>
-                    </div>
-                </div>
-
-                <p class="text-gray-600 mb-4">Securing containerized applications and infrastructure</p>
-
-                <div class="grid md:grid-cols-2 gap-2">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container security fundamentals
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Image vulnerability scanning
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Runtime security considerations
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Secrets management in containers
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        User permissions and privilege escalation
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Security scanning and compliance
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center">
-                        <span class="inline-block w-8 h-8 bg-k8s-blue text-white rounded-full text-sm flex items-center justify-center mr-3 flex-shrink-0">
-                            9
-                        </span>
-                        <h3 class="text-xl font-semibold text-gray-900">
-                            Performance Optimization
-                        </h3>
-                    </div>
-                </div>
-
-                <p class="text-gray-600 mb-4">Optimizing Docker performance and resource usage</p>
-
-                <div class="grid md:grid-cols-2 gap-2">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Image optimization techniques
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Container resource monitoring
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Performance tuning strategies
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Debugging performance issues
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Best practices for production workloads
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-check-circle text-devops-green mr-2"></i>
-                        Cost optimization strategies
+                        Advanced proxy features
                     </div>
                 </div>
             </div>
