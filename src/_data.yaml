@@ -50,6 +50,18 @@ comingSoon:
     icon:
       name: fas fa-key
       library: font
+  - title: Kubernetes RBAC
+    description: Role Based Access Control in Kubernetes
+    color: indigo-400
+    icon:
+      name: fas fa-key
+      library: font
+  - title: Virtual Clusters
+    description: Need a lot of clusters? Use vCluster to decrease costs and management burden.
+    color: orange-400
+    icon:
+      name: fas fa-hexagon-nodes
+      library: font
   - title: Kubernetes Observability
     description: Monitoring and logging for Kubernetes clusters
     color: green-400
