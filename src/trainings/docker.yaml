@@ -11,18 +11,18 @@ color: blue-500
 icon:
   name: fab fa-docker
   library: font
-overview: Docker has revolutionized how we build, ship, and run applications. This comprehensive training takes you from containerization basics to production-ready deployments. You'll master Docker fundamentals and gain the skills needed to containerize any application effectively.
+overview: |
+  This training focuses on a dev/devops perspective. You start from
+  packaging your application (with whatever language you use) then run your
+  complete stack (with db, proxy, loadbalancer) all in containers, to reach
+  dev-prod parity.
 
 learningOutcomes:
   - Understand containerization concepts and Docker architecture
   - Build efficient Docker images using best practices
   - Manage containers, networks, and volumes effectively
   - Create multi-container applications with Docker Compose
-  - Implement security best practices for containerized applications
-  - Optimize Docker images for size and performance
-  - Set up CI/CD pipelines with Docker
-  - Deploy containerized applications to production
-  - Troubleshoot common Docker issues and performance problems
+  - Deploy containerized applications to dev/test/production
   - Design container-native application architectures
 
 curriculum:
@@ -32,86 +32,56 @@ curriculum:
       - "What are containers and why they matter"
       - "Virtual machines vs containers"
       - "Docker architecture and components"
-      - "Installing Docker and setting up the environment"
-      - "Your first container: Hello World"
+      - "Your first containers"
       - "Docker CLI basics and common commands"
 
   - title: "Working with Docker Images"
     description: "Creating, managing, and optimizing Docker images"
     topics:
-      - "Understanding Docker images and layers"
+      - "Understanding the difference and connection between Docker containers vs images"
       - "Pulling and pushing images from registries"
       - "Writing effective Dockerfiles"
       - "Multi-stage builds for optimization"
       - "Image tagging and versioning strategies"
-      - "Best practices for image security and size"
 
-  - title: "Container Management"
-    description: "Running and managing Docker containers effectively"
+  - title: "Docker Networking"
+    description: "Container networking and service communication"
     topics:
-      - "Container lifecycle management"
-      - "Port mapping and networking basics"
-      - "Environment variables and configuration"
-      - "Container logs and monitoring"
-      - "Resource limits and constraints"
-      - "Container health checks and restart policies"
+      - "Docker networking fundamentals"
+      - "Bridge, host, none and overlay networks"
+      - "Container-to-container communication"
+      - "Service discovery patterns"
 
+  - title: "Exposing Services"
+    description: "How to reach services from inside and outside of your local env"
+    topics:
+      - "Access the service within the same container"
+      - "Access the service from an other container"
+      - "Access the service from outside network"
+      - "Declare the port your app listens on (EXPOSE)"
+  
   - title: "Data Management and Volumes"
     description: "Managing persistent data in containerized applications"
     topics:
       - "Understanding Docker volumes"
       - "Bind mounts vs named volumes"
       - "Volume drivers and plugins"
-      - "Data backup and migration strategies"
       - "Sharing data between containers"
-      - "Temporary filesystems and security"
-
-  - title: "Docker Networking"
-    description: "Container networking and service communication"
-    topics:
-      - "Docker networking fundamentals"
-      - "Bridge, host, and overlay networks"
-      - "Container-to-container communication"
-      - "Service discovery patterns"
-      - "Network security and isolation"
-      - "Load balancing and proxy configuration"
 
   - title: "Multi-Container Applications"
     description: "Building complex applications with Docker Compose"
     topics:
       - "Introduction to Docker Compose"
       - "Writing docker-compose.yml files"
-      - "Service dependencies and startup order"
       - "Environment-specific configurations"
-      - "Scaling services with Compose"
       - "Development workflows with Compose"
 
   - title: "Production Deployment Patterns"
     description: "Deploying containerized applications to production"
     topics:
-      - "Production deployment strategies"
-      - "Container orchestration basics"
-      - "Health checks and monitoring in production"
-      - "Rolling updates and blue-green deployments"
-      - "Container registry management"
-      - "Backup and disaster recovery"
+      - "Add a proxy to the front"
+      - "Free HTTPS certificate"
+      - "Rolling updates"
+      - "Authentication"
+      - "Advanced proxy features"
 
-  - title: "Security Best Practices"
-    description: "Securing containerized applications and infrastructure"
-    topics:
-      - "Container security fundamentals"
-      - "Image vulnerability scanning"
-      - "Runtime security considerations"
-      - "Secrets management in containers"
-      - "User permissions and privilege escalation"
-      - "Security scanning and compliance"
-
-  - title: "Performance Optimization"
-    description: "Optimizing Docker performance and resource usage"
-    topics:
-      - "Image optimization techniques"
-      - "Container resource monitoring"
-      - "Performance tuning strategies"
-      - "Debugging performance issues"
-      - "Best practices for production workloads"
-      - "Cost optimization strategies"
